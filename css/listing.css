@@ -1,0 +1,23 @@
+
+fieldset{
+    border: none;
+}
+form{
+    max-width: 70vw;
+    margin: auto;
+}
+input[type="text"]{
+    width: 100%;
+    max-width: 25vw;
+}
+input,select{
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #000;
+    border-radius: 2px;
+}
+label{
+    display: inline-block;
+    text-align: end;
+    font-size: 1.6rem;
+}

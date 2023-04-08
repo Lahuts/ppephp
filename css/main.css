@@ -1,0 +1,102 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+header{
+    background: #000;
+    color: #fff;
+    text-align: center;
+}
+header a {
+    color: #fff;
+    text-decoration: none;
+}
+header ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+}
+header ul li{
+    padding: 1rem;
+    cursor: pointer;
+}
+header ul li a img{
+    filter: invert(1);
+    width: 3rem;
+}
+header ul li:hover{
+    background: rgb(0, 0, 0);
+    filter: invert();
+}
+header ul li a{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: inherit;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.btn_connect>img{
+    rotate: -90deg;
+}
+.btn_connect{
+    font-weight : 300;
+}
+
+h1{
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 500;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgb(160, 160, 160);
+    max-width: 80vw;
+    padding: 1rem;
+    margin: 2rem auto 1rem auto;
+}
+.fs_connection{
+    max-width: 45vw;
+    margin: auto;
+    border: none;
+}
+.fs_connection>form{
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: repeat(2,1fr);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} 
+.fs_connection>p{
+    text-align: center;
+    font-size: 1.4rem;
+    margin: 1rem;
+}
+.fs_connection>form>input{
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #000;
+    border-radius: 2px;
+}
+.fs_connection>form>label{
+    display: inline-block;
+    text-align: end;
+    font-size: 1.6rem;
+}
+.fs_connection>form>input[type="submit"]{
+    background: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 10vw;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin: 1rem auto auto auto;
+    grid-column: 1/-1;
+}
+.fs_connection>form>input[type="submit"]:hover{
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
