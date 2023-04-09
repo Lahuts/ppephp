@@ -17,17 +17,16 @@ header a {
 header ul{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     list-style: none;
     padding: 0;
 }
 header ul li{
     padding: 1rem;
     cursor: pointer;
+    
 }
-header ul li a img{
-    filter: invert(1);
-    width: 3rem;
-}
+
 header ul li:hover{
     background: var(--bg-color-header);
     filter: invert();
@@ -37,15 +36,12 @@ header ul li a{
     align-items: center;
     gap: 1rem;
     color: inherit;
-    font-size:var(--font-size-a);
+    font-size:var(--font-size-header-li-a);
     font-weight: 600;
 }
-
-.btn_connect>img{
-    rotate: -90deg;
-}
-.btn_connect{
-    font-weight : 300;
+header ul li a img{
+    filter: invert(1);
+    width: 3rem;
 }
 
 h1{
@@ -59,51 +55,53 @@ h1{
     padding: 1rem;
     margin: 2rem auto 1rem auto;
 }
-.fs_connection{
-    max-width: 45vw;
-    margin: auto;
-    border: none;
+
+.btn_connect>img{
+    filter: invert();
+    width: 3rem;
 }
-.fs_connection>form{
-    display: grid;
-    grid-template-columns: 25% 75%;
-    grid-template-rows: repeat(2,1fr);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-} 
-.fs_connection>p{
-    text-align: center;
-    font-size: var(--font-size-p);
-    margin: 1rem;
+.btn_deconnect>img{
+    filter: invert(1);
+    width: 3rem;
+    rotate: 90deg;
 }
-.fs_connection>form>input{
-    margin: 1rem;
-    padding: 1rem;
-    border: 1px solid #000;
-    border-radius: 2px;
-    font-size: var(--font-size-input);
+.btn_connect>img{
+    rotate: -90deg;
 }
-.fs_connection>form>label{
-    display: inline-block;
-    text-align: end;
-    font-size: var(--font-size-label);
+.btn_connect{
+    font-weight : 300;
 }
-.fs_connection>form>input[type="submit"]{
-    background: var(--bg-color-btn);
-    color: var(--font-color-btn);
-    border: none;
-    cursor: pointer;
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+.nav__left{
     width: 100%;
-    max-width: 10vw;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    margin: 1rem auto auto auto;
-    grid-column: 1/-1;
-    font-size: var(--font-size-btn);
+    display: flex;
+    justify-content: space-between;
 }
-.fs_connection>form>input[type="submit"]:hover{
-    background: var(--bg-color-btn-hover);
-    color: var(--font-color-btn-hover);
-    border: 1px solid var(--font-color-btn-hover);
+.nav__right{
+    display: flex;
+    justify-content: end;
 }
+.nav__right>li{
+    padding: 1rem;
+    cursor: pointer;
+}
+.nav__right>li>a{
+    font-weight: 300;
+}
+.nav__right>li:nth-child(2):hover{
+    filter: invert(0);
+    background-color: var(--bg-color-header-hover);
+}
+.profil__img{
+    width:3rem;
+}
+
+.profil__img>img{
+    width: 100%;
+    border-radius: 50%;
+    filter: invert(0);
+}
+
