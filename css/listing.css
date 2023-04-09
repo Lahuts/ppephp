@@ -1,23 +1,39 @@
 
 fieldset{
     border: none;
+    margin-bottom: 2rem;
 }
 form{
-    max-width: 70vw;
+    max-width: 75vw;
     margin: auto;
 }
 input[type="text"]{
     width: 100%;
     max-width: 25vw;
 }
+select{
+    width: 100%;
+    max-width: 14vw;
+}
 input,select{
     margin: 1rem;
     padding: 1rem;
-    border: 1px solid #000;
+    border: 1px solid var(--font-color-main);
     border-radius: 2px;
 }
 label{
     display: inline-block;
-    text-align: end;
-    font-size: 1.6rem;
+    font-size: var(--font-size-label);
+}
+.card__list{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 3rem;
+    width: fit-content;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+.card__list>li{
+    width: fit-content;
 }

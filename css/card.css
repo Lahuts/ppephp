@@ -3,14 +3,14 @@
     display: flex;
     width: fit-content;
     margin: auto;
-    box-shadow: 0 0 1rem 0 rgb(0 0 0 / 20%);
+    box-shadow: 0 0 1rem 0 var(--shadow-color);
 }
 .card>p{
     position: absolute;
-    background-color: rgb(86, 139, 255);
+    background-color: var(--bg-color-pole-technique);
     padding:.5rem 1rem .5rem 1rem;
-    color: #fff;
-    font-size: 1.2rem;
+    color: var(--font-color-pole);
+    font-size: var(--font-size-pole);
     font-weight: 600;
     right: 0;
 }
@@ -25,25 +25,25 @@
     font-size: 1.6rem;
     font-weight: 500;
     margin-bottom: .5rem;
-    color: rgb(132, 132, 132);
+    color: var(--font-color-city);
 }
 .card>figure>figcaption>h3>strong{
-    color: rgb(0, 0, 0);
+    color: var(--font-color-h3-strong);
     margin-right: .5rem;
 }
 .card>figure>figcaption>p{
-    font-size: 1.5rem;
+    font-size: var(--font-size-p);
     font-weight: 300;
     margin-bottom: 1rem;
-    color: gray;
+    color: var(--font-color-city);
 }
 .card>figure>figcaption>ul>li{
     display: flex;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: var(--font-size-li);
     font-weight: 300;
     margin-bottom: .6rem;
-    color: rgb(78, 78, 78);
+    color: var(--font-color-card-li)
 }
 .card>figure>figcaption>ul>li>img{
     width: 1.5rem;
@@ -51,9 +51,9 @@
     filter: invert(.3);
 }
 .card>figure>figcaption>ul>li>a{
-    font-size: 1.5rem;
+    font-size: var(--font-size-a);
     font-weight: 300;
-    color: rgb(2, 2, 2);
+    color: var(--font-color-card-a);
 }
 .card>figure>img{
     width: 16.4rem;

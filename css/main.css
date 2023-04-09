@@ -1,13 +1,17 @@
 *{
     font-family: 'Open Sans', sans-serif;
 }
+main{
+    height: 100vh;
+    background: var(--bg-color-main);
+}
 header{
-    background: #000;
-    color: #fff;
+    background: var(--bg-color-header);
+    color: var(--font-color-header);
     text-align: center;
 }
 header a {
-    color: #fff;
+    color: var(--font-color-header);
     text-decoration: none;
 }
 header ul{
@@ -25,7 +29,7 @@ header ul li a img{
     width: 3rem;
 }
 header ul li:hover{
-    background: rgb(0, 0, 0);
+    background: var(--bg-color-header);
     filter: invert();
 }
 header ul li a{
@@ -33,9 +37,10 @@ header ul li a{
     align-items: center;
     gap: 1rem;
     color: inherit;
-    font-size: 1.6rem;
+    font-size:var(--font-size-a);
     font-weight: 600;
 }
+
 .btn_connect>img{
     rotate: -90deg;
 }
@@ -45,11 +50,11 @@ header ul li a{
 
 h1{
     text-align: center;
-    font-size: 4rem;
+    font-size: var(--font-size-h1);
     font-weight: 500;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    border-bottom: 1px solid rgb(160, 160, 160);
+    border-bottom: 1px solid var(--bg-color-border);
     max-width: 80vw;
     padding: 1rem;
     margin: 2rem auto 1rem auto;
@@ -69,7 +74,7 @@ h1{
 } 
 .fs_connection>p{
     text-align: center;
-    font-size: 1.4rem;
+    font-size: var(--font-size-p);
     margin: 1rem;
 }
 .fs_connection>form>input{
@@ -77,15 +82,16 @@ h1{
     padding: 1rem;
     border: 1px solid #000;
     border-radius: 2px;
+    font-size: var(--font-size-input);
 }
 .fs_connection>form>label{
     display: inline-block;
     text-align: end;
-    font-size: 1.6rem;
+    font-size: var(--font-size-label);
 }
 .fs_connection>form>input[type="submit"]{
-    background: #000;
-    color: #fff;
+    background: var(--bg-color-btn);
+    color: var(--font-color-btn);
     border: none;
     cursor: pointer;
     width: 100%;
@@ -94,9 +100,10 @@ h1{
     padding-bottom: 1rem;
     margin: 1rem auto auto auto;
     grid-column: 1/-1;
+    font-size: var(--font-size-btn);
 }
 .fs_connection>form>input[type="submit"]:hover{
-    background: #fff;
-    color: #000;
-    border: 1px solid #000;
+    background: var(--bg-color-btn-hover);
+    color: var(--font-color-btn-hover);
+    border: 1px solid var(--font-color-btn-hover);
 }
