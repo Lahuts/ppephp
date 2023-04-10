@@ -1,0 +1,60 @@
+.card{
+    position: relative;
+    display: flex;
+    width: fit-content;
+    margin: auto;
+    box-shadow: 0 0 1rem 0 var(--shadow-color);
+}
+.card>p{
+    position: absolute;
+    background-color: var(--bg-color-pole-technique);
+    padding:.5rem 1rem .5rem 1rem;
+    color: var(--font-color-pole);
+    font-size: var(--font-size-pole);
+    font-weight: 600;
+    right: 0;
+}
+.card>figure{
+    display: flex;
+}
+.card>figure>figcaption{
+    padding: 2.5rem;
+    width: 28rem;
+}
+.card>figure>figcaption>h3{
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: .5rem;
+    color: var(--font-color-city);
+}
+.card>figure>figcaption>h3>strong{
+    color: var(--font-color-h3-strong);
+    margin-right: .5rem;
+}
+.card>figure>figcaption>p{
+    font-size: var(--font-size-p);
+    font-weight: 300;
+    margin-bottom: 1rem;
+    color: var(--font-color-city);
+}
+.card>figure>figcaption>ul>li{
+    display: flex;
+    align-items: center;
+    font-size: var(--font-size-li);
+    font-weight: 300;
+    margin-bottom: .6rem;
+    color: var(--font-color-card-li)
+}
+.card>figure>figcaption>ul>li>img{
+    width: 1.5rem;
+    margin-right: .5rem;
+    filter: invert(.3);
+}
+.card>figure>figcaption>ul>li>a{
+    font-size: var(--font-size-a);
+    font-weight: 300;
+    color: var(--font-color-card-a);
+}
+.card>figure>img{
+    width: 16.4rem;
+}

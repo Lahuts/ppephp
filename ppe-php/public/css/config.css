@@ -1,0 +1,38 @@
+.field__config{
+    width: fit-content;
+    border: none;
+    margin: auto;
+}
+.field__config>form{
+    width: fit-content;
+    display: grid;
+    grid-template-columns: 20%, 80%;
+    align-items: center;
+    gap: 1rem;
+}
+.field__config>form>input,select{
+    border: thin solid var(--bg-color-border);
+    border-radius: 2px;
+    width: 30vw;
+    padding: 1rem;
+}
+.field__config>form>label{
+    text-align: right;
+    font-size: var(--font-size-label);
+}
+.field__config>form>input[type="submit"]{
+    margin: auto;
+    max-width: 20%;
+    grid-column: 1/3;
+    text-align: center;
+    background-color: var(--bg-color-btn);
+    color: var(--font-color-btn);
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+}
+.field__config>form>input[type="submit"]:hover{
+    background-color: var(--bg-color-btn-hover);
+    color: var(--font-color-btn-hover);
+    border: 1px solid var(--bg-color-btn);
+}
