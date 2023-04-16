@@ -1,3 +1,9 @@
+@php
+use App\Models\Utilisateur;
+$users = Utilisateur::where('email', '!=',session()->get('user')->getEmail())->get();
+$userSafe = Utilisateur::getAllUsersSafe();
+@endphp
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -38,66 +44,34 @@
             <form>
             <input  id="input_name"type="text" placeholder="Recherche ...">
             <label for="">Rechercher par :</label>
-            <select name="" id="">
-                <option value="">Nom</option>
-                <option value="">Prénom</option>
-                <option value="">Email</option>
+            <select name="searchby" id="select_searchby">
+                <option value="Nom">Nom</option>
+                <option value="Prenom">Prénom</option>
+                <option value="Email">Email</option>
             </select>
             <label for="">Catégorie:</label>
-            <select name="" id="">
-                <option value="">-Aucun-</option>
-                <option value="">Tous</option>
-                <option value="">Administrateur</option>
-                <option value="">Collaborateur</option>
+            <select name="categorie" id="select_pole">
+                <option value=".*">- Aucun -</option>
+                @php
+                $categories = Utilisateur::categories();
+                foreach ($categories as $categorie) {
+                    echo '<option value="'.$categorie->pole.'">'.$categorie->pole.'</option>';
+                }
+                @endphp
             </select>
         </form>
     </fieldset>
     <ul class="card__list" id="card_list">
-        @php
-        use App\Models\Utilisateur;
-       $users = Utilisateur::where('email', '!=',session()->get('user')->getEmail())->get();
-       $userSafe = Utilisateur::getAllUsersSafe();
+       @php
        foreach ($users as $user) {
-        $user->getRandomCard();
+        $user->getCard();
        }
         @endphp
     </ul>
     </main>
     <script>
         let userArray = @json($userSafe); 
-
-        document.addEventListener('DOMContentLoaded', ()=> {
-    let input_name = document.getElementById('input_name');
-    let ul = document.getElementById('card_list');
-    
-   
-    input_name.addEventListener('keyup', (field)=> {
-        ul.innerHTML = '';
-        userArray.forEach(e => 
-    {
-        if(e.nom.toLowerCase().match(('^'+field.target.value+'.*').toLowerCase())){
-            let li = document.createElement('li');
-            li.innerHTML = `
-            <article class="card">
-            <p class="pole">`+e.pole+`</p>
-            <figure>
-                <img src="`+e.imgURL+`" alt="Photo de `+e.prenom+`">
-                <figcaption>
-                    <h3><strong>`+e.prenom+" "+e.nom+`</strong>('.$this->getAge().' ans)</h3>
-                    <p>`+e.ville+", "+e.pays+`</p>
-                    <ul>
-                        <li><img src="asset/mail.png" alt="Email de `+e.prenom+`"><a href="mailto:`+e.email+`">`+e.email+`</a></li>
-                        <li><img src="asset/tel.png" alt="Télephone de `+e.prenom+`"><a href="">`+e.telephone+`</a></li>
-                        <li><img src="asset/cake.png" alt="">Anniversaire :`+e.date_anniversaire+`</li>
-                    </ul>
-                </figcaption>
-            </article>
-            `;
-            ul.appendChild(li);
-        }
-    });
-    });
-});
     </script>
+    <script src="{{asset("js/app.js")}}"></script>
 </body>
 </html>
