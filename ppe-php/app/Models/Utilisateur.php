@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use DB;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use DateTime;
@@ -65,6 +66,7 @@ class Utilisateur extends Model
     }
     public function setNom($nom){
         $this->nom = $nom;
+        DB::update('update Utilisateur set nom = ? where id = ?',[$nom,$this->id]);
     }
     public function setPrenom($prenom){
         $this->prenom = $prenom;
@@ -127,5 +129,8 @@ class Utilisateur extends Model
     }
     public static function categories(){
         return Utilisateur::select('pole')->distinct()->get();
+    }
+    public static function sexes(){
+        return Utilisateur::select('sexe')->distinct()->get();
     }
 }
