@@ -21,10 +21,10 @@
         </ul>
         <ul class="nav__right">
             <li>
-                <a href="/liste.html"><img src="/asset/list.png" alt="Liste"> Liste</a>
+                <a href="/liste"><img src="/asset/list.png" alt="Liste"> Liste</a>
             </li>
             <li>
-                <a class="profil__img" href="/config.html"><img src="https://this-person-does-not-exist.com/img/avatar-gen11379f2d0d0f059e44c5eccec34fc9e3.jpg" alt=""></a>
+                <a class="profil__img" href="/config"><img src="https://this-person-does-not-exist.com/img/avatar-gen11379f2d0d0f059e44c5eccec34fc9e3.jpg" alt=""></a>
             </li>
             <li>
                 <a class="btn_deconnect" href="/"><img src="/asset/out.png" alt="Déconnexion"> Déconnexion</a>
@@ -39,8 +39,8 @@
             <h2>Avez-vous dit bonjour à : </h2>
             @php 
             use App\Models\Utilisateur;
-            // Random Card
-            Utilisateur::getRandomCard();
+            // Random Card sans le utilisateur connect
+            Utilisateur::getRandomCard(session()->get('user'));
             @endphp
         </section>
         <a href="/hello" class="btn__hello">DIRE BONJOUR À QUELQU'UN D'AUTRE</a>

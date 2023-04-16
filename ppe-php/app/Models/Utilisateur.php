@@ -115,9 +115,12 @@ class Utilisateur extends Model
             '
         );
     }
-    public static function getRandomCard(){
-        $utilisateurs = Utilisateur::all();
+    public static function getRandomCard($current_user){
+        $utilisateurs = Utilisateur::where('email', '!=',$current_user->getEmail())->get();
         $utilisateur = $utilisateurs[rand(0, count($utilisateurs)-1)];
         return $utilisateur->getCard();
+    }
+    public static function getAllUsersSafe(){
+        return Utilisateur::select('id','nom','prenom','email','sexe','pays','ville','date_naissance','telephone','url_photo','pole')->get();
     }
 }
