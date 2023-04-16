@@ -16,7 +16,7 @@ class ConnectionController extends BaseController
         $user = Utilisateur::where('email', $email)->first();
         if($user != null && $user->getPassword() == $password){
             session_start();
-            $_SESSION['user'] = $user;
+            session()->put('user',$user);
             return view('hello', ['user' => $user]);
         }else{
             return view('index', ['error' => '<p class="error">Email ou mot de passe incorrect</p>']);
