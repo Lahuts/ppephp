@@ -49,10 +49,10 @@ class Utilisateur extends Model
     }
     public function getDateAnniversaire(){
         Carbon::setLocale('fr');
-        $date = new $this->date_naissance;
-        $date->setDate(date("Y"), $date->format("m"), $date->format("d"));
+        $date = $this->date_naissance;
         $date = Carbon::parse($date)->translatedFormat('d F');
-        return strval($date);
+        $date = preg_match('/^0/', strval($date)) ? preg_replace('/^0+/', '', strval($date)) : $date;
+        return $date;
     }
     public function getTelephone(){
         return $this->telephone;
@@ -110,7 +110,7 @@ class Utilisateur extends Model
                     <ul>
                         <li><img src="asset/mail.png" alt="Email de '.$this->getPrenom().'"><a href="'.$this->getEmail().'">'.$this->getEmail().'</a></li>
                         <li><img src="asset/tel.png" alt="Télephone de '.$this->getPrenom().'"><a href="">'.$this->getTelephone().'</a></li>
-                        <li><img src="asset/cake.png" alt="">Anniversaire :'.$this->getDateAnniversaire().'</li>
+                        <li><img src="asset/cake.png" alt="">Anniversaire : '.$this->getDateAnniversaire().'</li>
                     </ul>
                 </figcaption>
             </article>
@@ -124,5 +124,8 @@ class Utilisateur extends Model
     }
     public static function getAllUsersSafe(){
         return Utilisateur::select('id','nom','prenom','email','sexe','pays','ville','date_naissance','telephone','url_photo','pole')->get();
+    }
+    public static function categories(){
+        return Utilisateur::select('pole')->distinct()->get();
     }
 }
