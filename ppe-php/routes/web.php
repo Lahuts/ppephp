@@ -15,10 +15,12 @@ use App\Http\Controllers\ImageController;
 */
 
 
-Route::get('/',);
+Route::get('/',function () {return view('index');});
 
 Route::post('/',[\App\Http\Controllers\ConnectionController::class,'connect']);
 
 Route::get('/hello', function () {return view('hello');});
+
+Route::get('/liste', function () {return view('liste');});
 
 
