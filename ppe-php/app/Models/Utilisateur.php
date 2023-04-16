@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use DateTime;
+use Carbon\Carbon;
 
 class Utilisateur extends Model
 {
@@ -47,10 +48,11 @@ class Utilisateur extends Model
         return $this->date_naissance;
     }
     public function getDateAnniversaire(){
-        setlocale(LC_TIME, "fr_FR"); 
+        Carbon::setLocale('fr');
         $date = new $this->date_naissance;
         $date->setDate(date("Y"), $date->format("m"), $date->format("d"));
-        return strval($date->format("d F"));
+        $date = Carbon::parse($date)->translatedFormat('d F');
+        return strval($date);
     }
     public function getTelephone(){
         return $this->telephone;
