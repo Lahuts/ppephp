@@ -23,4 +23,8 @@ Route::get('/hello', function () {return view('hello');});
 
 Route::get('/liste', function () {return view('liste');});
 
+Route::get('/config', function () {return view('config');});
+
+Route::post('/config',[\App\Http\Controllers\ConfigController::class,'config']);
+
 
