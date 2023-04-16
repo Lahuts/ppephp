@@ -65,8 +65,10 @@ class Utilisateur extends Model
         return $this->pole;
     }
     public function setNom($nom){
-        $this->nom = $nom;
-        DB::update('update Utilisateur set nom = ? where id = ?',[$nom,$this->id]);
+
+            $this->nom = $nom;
+            DB::update('update Utilisateur set nom = ? where id = ?',[$nom,$this->id]);
+        
     }
     public function setPrenom($prenom){
         $this->prenom = $prenom;
