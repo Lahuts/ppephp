@@ -1,0 +1,51 @@
+:root{
+    /*** Font Sizes ***/
+    /* Calcul = Taille Min + (Taille Max - Taille Min) * ((Taille Horizontal Ecran - Taille Min Horizontal Ecran) / (Flat Max Horizontal Ecran - Flat Min Horizontal Ecran)) */
+    --font-size-h1: calc(2.5rem + (40 - 25) * ((100vw - 30rem) / (1920 - 300)));
+    --font-size-h2: calc(2rem + (25 - 20) * ((100vw - 30rem) / (1920 - 300)));
+    --font-size-h3: calc(1.5rem + (25 - 15) * ((100vw - 30rem) / (1920 - 300)));
+    --font-size-p: calc(1.2rem + (16 - 12) * ((100vw - 30rem) / (1920 - 300)));
+    --font-size-label: calc(1.2rem + (17 - 12) * ((100vw - 30rem) / (1920 - 300)));
+    --font-size-li: calc(1rem + (15 - 10) * ((100vw - 30rem) / (1920 - 300)));
+    --font-size-a: calc(1rem + (15 - 10) * ((100vw - 30rem) / (1920 - 300)));
+    --font-size-btn: calc(1rem + (15 - 10) * ((100vw - 30rem) / (1920 - 300)));
+    --font-size-input: calc(1.7rem + (16 - 10) * ((100vw - 30rem) / (1920 - 300)));
+    --font-size-pole: calc(1rem + (12 - 10) * ((100vw - 30rem) / (1920 - 300)));
+    --font-size-header-li-a: calc(1rem + (18 - 10) * ((100vw - 30rem) / (1920 - 300)));
+
+    /***Background Colors ***/
+    --bg-color-header: #000;
+    --bg-color-header-hover: #fff;
+    --bg-color-main: #fff;
+    --bg-color-footer: #000;
+    --bg-color-btn: #000;
+    --bg-color-btn-hover: #fff;
+    --bg-color-border: rgb(132, 132, 132);
+    --bg-color-error: #d93025;
+
+    /*** Fonts Colors ***/
+    --font-color-header: #fff;
+    --font-color-main: #000;
+    --font-color-footer: #fff;
+    --font-color-btn: #fff;
+    --font-color-pole: #fff;
+    --font-color-city: rgb(132, 132, 132);
+    --font-color-h3-strong: #000;
+    --font-color-btn-hover: #000;
+    --font-color-card-li:rgb(78, 78, 78);
+    --font-color-card-a:rgb(0, 0, 0);
+    --font-color-error: #d93025;
+
+    /*** Background Color poles ***/
+    --bg-color-pole-technique: rgb(86, 139, 255);
+    --bg-color-pole-marketing: rgb(255, 0, 0);
+    --bg-color-pole-organisation: rgb(0, 255, 0);
+    --bg-color-pole-formation: rgb(255, 255, 0);
+    --bg-color-pole-ressources: rgb(255, 0, 255);
+
+    /*** Shadow Color ***/
+    --shadow-color: rgb(0 0 0 / 20%);
+
+
+    
+}

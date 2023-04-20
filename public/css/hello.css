@@ -1,0 +1,31 @@
+main>p{
+    text-align: center;
+    font-size: 1.6rem;
+    margin: 1rem;
+}
+h1{
+    border: none;
+}
+.say__hello>h2{
+    text-align: center;
+    font-size: var(--font-size-h2);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.btn__hello{
+    display: block;
+    margin: 1rem auto auto auto;
+    text-align: center;
+    width: 100%;
+    max-width: 25vw;
+    background-color: var(--bg-color-btn);
+    color: var(--font-color-btn);
+    padding: 1rem;
+    font-size: var(--font-size-btn);
+}
+.btn__hello:hover{
+    background-color: var(--bg-color-btn-hover);
+    color: var(--font-color-btn-hover);
+    border: var(--font-color-btn-hover) 1px solid;
+    border-radius: 2px;
+}
