@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Redirect;
 
 class User extends Authenticatable
 {
@@ -100,42 +101,57 @@ class User extends Authenticatable
         return $this->pole;
     }
     public function setNom($nom){
-
+        if(preg_match('/^.*[a-z-A-Z]$/',$nom)){
             $this->nom = $nom;
-            DB::update('update users set nom = ? where id = ?',[$nom,$this->id]);
-
+        }else{
+            return withErrors(['nom' => 'Le nom ne doit contenir que des lettres']);
+        }
         
     }
     public function setPrenom($prenom){
-        $this->prenom = $prenom;
+        if(preg_match('/^.*[a-z-A-Z]$/',$prenom)){
+            $this->prenom = $prenom;
+        }else{
+           return Redirect::back()->withErrors(['prenom' => 'Le prenom ne doit contenir que des lettres']);
+        }
+        
     }
 
     public function setEmail($email){
         $this->email = $email;
+        DB::update('update users set email =? where id =?',[$email,$this->id]);
     }
     public function setSexe($sexe){
         $this->sexe = $sexe;
+        DB::update('update users set sexe =? where id =?',[$sexe,$this->id]);
     }
     public function setPassword($password){
         $this->password = $password;
+        DB::update('update users set password =? where id =?',[$password,$this->id]);
     }
     public function setPays($pays){
         $this->pays = $pays;
+        DB::update('update users set pays =? where id =?',[$pays,$this->id]);
     }
     public function setVille($ville){
         $this->ville = $ville;
+        DB::update('update users set ville =? where id =?',[$ville,$this->id]);
     }
     public function setDateNaissance($date_naissance){
         $this->date_naissance = $date_naissance;
+        DB::update('update users set date_naissance =? where id =?',[$date_naissance,$this->id]);
     }
     public function setTelephone($telephone){
         $this->telephone = $telephone;
+        DB::update('update users set telephone =? where id =?',[$telephone,$this->id]);
     }
     public function setUrlPhoto($url_photo){
         $this->url_photo = $url_photo;
+        DB::update('update users set url_photo =? where id =?',[$url_photo,$this->id]);
     }
     public function setPole($pole){
         $this->pole = $pole;
+        DB::update('update users set pole =? where id =?',[$pole,$this->id]);
     }
     public function getCard(){
         print(
@@ -162,8 +178,8 @@ class User extends Authenticatable
         $utilisateur = $utilisateurs->random();
         return $utilisateur->getCard();
     }
-    public static function getAllUsersSafe(){
-        return User::select('id','nom','prenom','email','sexe','pays','ville','date_naissance','telephone','url_photo','pole')->get();
+    public static function getAllUsersSafe($user){
+        return User::select('id','nom','prenom','email','sexe','pays','ville','date_naissance','telephone','url_photo','pole')->where('id','!=',$user)->get();
     }
     public static function categories(){
         return User::select('pole')->distinct()->get();

@@ -37,3 +37,27 @@ label{
 .card__list>li{
     width: fit-content;
 }
+.btn__container{
+    margin: auto;
+    width: 100%;
+    max-width: fit-content;
+}
+.btn__container>button{
+    background-color: black;
+    font-size: var(--font-size-label);
+    color: white;
+    padding: 2rem;
+    border: none;
+    border-radius: 50%;
+}
+.btn__container>button:hover{
+    background-color: var(--bg-color-main);
+    color: var(--font-color-main);
+    border: thin solid black;
+    cursor: pointer;
+}
+.btn__previous{
+    transform: rotate(180deg);
+    margin-right: 3vw;
+
+}

@@ -12,6 +12,8 @@
     --font-size-input: calc(1.7rem + (16 - 10) * ((100vw - 30rem) / (1920 - 300)));
     --font-size-pole: calc(1rem + (12 - 10) * ((100vw - 30rem) / (1920 - 300)));
     --font-size-header-li-a: calc(1rem + (18 - 10) * ((100vw - 30rem) / (1920 - 300)));
+    --font-size-alert: calc(1rem + (15 - 10) * ((100vw - 30rem) / (1920 - 300)));
+    --font-size-p-something: calc(1.6rem + (18 - 16) * ((100vw - 30rem) / (1920 - 300)));
 
     /***Background Colors ***/
     --bg-color-header: #000;
